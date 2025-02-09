@@ -1,32 +1,20 @@
 package com.example.TaskManager.Models;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 
-public class Task {
-    @JsonProperty("tsk_id")
+public class TaskDetailsDTO {
     private Long tsk_id;
-
-    @JsonProperty("tsk_name")
     private String tsk_name;
-
-    @JsonProperty("description")
     private String description;
-
-    @JsonProperty("start_date")
     private Date start_date;
-
-    @JsonProperty("end_date")
     private Date end_date;
-
-    @JsonProperty("due_date")
     private Date due_date;
-
-    @JsonProperty("employee_id")
-    private Long employee_id;
-
-    @JsonProperty("task_category")
-    private Integer task_category;
+    private Long emp_id;
+    private String emp_name;
+    private String gender;
+    private Date dob;
+    private Integer cat_id;
+    private String cat_name;
 
     // Getters and Setters
     public Long getTsk_id() {
@@ -77,19 +65,51 @@ public class Task {
         this.due_date = due_date;
     }
 
-    public Long getEmployee_id() {
-        return employee_id;
+    public Long getEmp_id() {
+        return emp_id;
     }
 
-    public void setEmployee_id(Long employee) {
-        this.employee_id = employee;
+    public void setEmp_id(Long emp_id) {
+        this.emp_id = emp_id;
     }
 
-    public Integer getTask_category() {
-        return task_category;
+    public String getEmp_name() {
+        return emp_name;
     }
 
-    public void setTask_category(Integer task_category) {
-        this.task_category = task_category;
+    public void setEmp_name(String emp_name) {
+        this.emp_name = emp_name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+    public Integer getCat_id() {
+        return cat_id;
+    }
+
+    public void setCat_id(Integer cat_id) {
+        this.cat_id = cat_id;
+    }
+
+    public String getCat_name() {
+        return cat_name;
+    }
+
+    public void setCat_name(String cat_name) {
+        this.cat_name = cat_name;
     }
 }

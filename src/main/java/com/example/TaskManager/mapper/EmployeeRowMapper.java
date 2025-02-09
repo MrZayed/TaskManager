@@ -21,9 +21,13 @@ public class EmployeeRowMapper implements RowMapper<Employee> {
 
         // Map gender
         String genderString = rs.getString("gender");
+
         if (genderString != null) {
             employee.setGender(Gender.valueOf(genderString.toUpperCase()));
+        } else {
+            employee.setGender(null);
         }
+
 
         // Map DOB (Date of Birth)
         employee.setDOB(rs.getDate("DOB"));

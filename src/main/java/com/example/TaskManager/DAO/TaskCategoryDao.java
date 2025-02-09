@@ -1,8 +1,6 @@
-package com.example.TaskManager.DEO;
+package com.example.TaskManager.DAO;
 
 import com.example.TaskManager.Models.TaskCategory;
-import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

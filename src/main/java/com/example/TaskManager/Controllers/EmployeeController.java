@@ -1,14 +1,14 @@
 package com.example.TaskManager.Controllers;
 
 import com.example.TaskManager.Models.*;
-import com.example.TaskManager.Service.EmployeeService;
+import com.example.TaskManager.Services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/employees")
+@RequestMapping("/employee")
 public class EmployeeController {
 
     @Autowired
@@ -24,16 +24,26 @@ public class EmployeeController {
         return employeeService.findAll();
     }
 
+
     @PostMapping
     public void addEmployee(@RequestBody Employee employee) {
         employeeService.save(employee);
     }
 
     @PutMapping("/{emp_id}")
-        public void updateEmployee(@PathVariable Employee emp, @RequestBody Employee employee) {
-        employee.setEmp_id(emp.getEmp_id());
-        employeeService.update(emp);
+    public void updateEmployee(@PathVariable Long emp_id, @RequestBody Employee employee) {
+        Employee existingEmployee = employeeService.findById(emp_id); // Get the existing employee
+        if (existingEmployee != null) {
+            // Update the fields
+            existingEmployee.setEmp_name(employee.getEmp_name());
+            existingEmployee.setGender(employee.getGender());
+            existingEmployee.setDOB(employee.getDOB());
+
+            // Save the updated employee
+            employeeService.update(existingEmployee);
+        }
     }
+
 
     @DeleteMapping("/{emp_id}")
     public void deleteEmployee(@PathVariable Long emp_id) {

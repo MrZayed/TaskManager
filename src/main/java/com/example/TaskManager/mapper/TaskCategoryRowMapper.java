@@ -10,8 +10,8 @@ public class TaskCategoryRowMapper implements RowMapper<TaskCategory> {
     @Override
     public TaskCategory mapRow(ResultSet rs, int rowNum) throws SQLException {
         TaskCategory taskCategory = new TaskCategory();
-        taskCategory.setCatId(rs.getInt("id"));
-        taskCategory.setCatName(rs.getString("name"));
+        taskCategory.setCatId(rs.getInt("CAT_ID")); // Use CAT_ID here
+        taskCategory.setCatName(rs.getString("CAT_NAME")); // Use CAT_NAME here
         return taskCategory;
     }
 }

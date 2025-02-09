@@ -2,9 +2,10 @@
 CREATE TABLE employees (
     emp_id BIGINT PRIMARY KEY AUTO_INCREMENT,
     emp_name VARCHAR(255) NOT NULL,
-    gender VARCHAR(10) NOT NULL,
-    DOB DATE NOT NULL
+    gender VARCHAR(10) NOT NULL CHECK (gender IN ('MALE', 'FEMALE')),  -- Use VARCHAR with CHECK constraint
+    DOB DATE
 );
+
 
 -- Create tasks table
 CREATE TABLE tasks (
@@ -28,9 +29,10 @@ CREATE TABLE task_categories (
 
 -- Insert sample employees
 INSERT INTO employees (emp_name, gender, DOB) VALUES
-('Alice Johnson', 'FEMALE', '1990-05-15'),
-('Bob Smith', 'MALE', '1985-07-20'),
-('Charlie Brown', 'MALE', '1992-11-25');
+    ('Labalibo', 'FEMALE', '1990-05-15'),
+    ('Hamasa', 'MALE', '1985-07-20'),
+    ('Hambola', 'MALE', '1992-11-25');
+
 
 -- Insert sample task categories
 INSERT INTO task_categories (cat_name) VALUES

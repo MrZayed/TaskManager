@@ -1,14 +1,14 @@
 package com.example.TaskManager.Controllers;
 
 import com.example.TaskManager.Models.TaskCategory;
-import com.example.TaskManager.Service.TaskCategoryService;
+import com.example.TaskManager.Services.TaskCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/TaskCategories")
+@RequestMapping("/TaskCategorie")
 public class TaskCategoryController {
 
     private final TaskCategoryService taskCategoryService;

@@ -1,6 +1,7 @@
-package com.example.TaskManager.DEO;
+package com.example.TaskManager.DAO;
 
 import com.example.TaskManager.Models.Employee;
+import com.example.TaskManager.Models.Gender;
 import com.example.TaskManager.mapper.EmployeeRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -31,8 +32,8 @@ public class EmployeeDaoImpl implements EmployeeDao { // Implements the Employee
 
     @Override
     public void save(Employee employee) {
-        String sql = "INSERT INTO employees (emp_name, gender, DOB) VALUES (?, ?, ?)";
-        jdbcTemplate.update(sql, employee.getEmp_name(), employee.getGender().toString(), employee.getDOB());
+        String sql = "INSERT INTO employees (emp_name,gender,DOB) VALUES (?, ?, ?)";
+        jdbcTemplate.update(sql, employee.getEmp_name(),employee.getGender().name(), employee.getDOB());
     }
 
 

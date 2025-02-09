@@ -10,6 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TaskCategory {
+
     private Integer catId;
     private String CatName ;
 

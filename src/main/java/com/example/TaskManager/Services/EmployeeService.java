@@ -1,13 +1,13 @@
-package com.example.TaskManager.Service;
+package com.example.TaskManager.Services;
 
-import com.example.TaskManager.DEO.EmployeeDao;
+import com.example.TaskManager.DAO.EmployeeDao;
 import com.example.TaskManager.Models.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service  // Make sure EmployeeService is a Spring-managed service
+@Service
 public class EmployeeService {
 
     private final EmployeeDao employeeDao;

@@ -1,7 +1,6 @@
-package com.example.TaskManager.Service;
+package com.example.TaskManager.Services;
 
-import com.example.TaskManager.DEO.TaskCategoryDao;
-import com.example.TaskManager.Models.Employee;
+import com.example.TaskManager.DAO.TaskCategoryDao;
 import com.example.TaskManager.Models.TaskCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
